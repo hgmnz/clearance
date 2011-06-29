@@ -50,6 +50,7 @@ module Clearance
           :value   => user.remember_token,
           :expires => Clearance.configuration.cookie_expiration.call
         }
+        session[:user_id] = user.id
         self.current_user = user
       end
     end
